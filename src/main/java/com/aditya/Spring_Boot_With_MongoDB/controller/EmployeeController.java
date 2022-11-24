@@ -12,6 +12,7 @@ import com.aditya.Spring_Boot_With_MongoDB.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,11 @@ public class EmployeeController {
 	@PostMapping("add")
 	public ResponseEntity<?> addEmployee(Employee employee) {
 		return new ResponseEntity<>(this.employeeService.add(employee), HttpStatus.CREATED);
+	}
+
+	@GetMapping("getall")
+	public ResponseEntity<?> getALl() {
+		return new ResponseEntity<>(this.employeeService.getAll(), HttpStatus.OK);
 	}
 
 }
