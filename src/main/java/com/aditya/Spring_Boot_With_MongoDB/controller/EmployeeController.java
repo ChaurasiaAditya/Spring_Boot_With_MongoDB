@@ -8,6 +8,7 @@
 package com.aditya.Spring_Boot_With_MongoDB.controller;
 
 import com.aditya.Spring_Boot_With_MongoDB.domain.Employee;
+import com.aditya.Spring_Boot_With_MongoDB.exeption.EmployeeAlreadyExist;
 import com.aditya.Spring_Boot_With_MongoDB.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,7 +28,12 @@ public class EmployeeController {
 
 	@PostMapping("add")
 	public ResponseEntity<?> addEmployee(@RequestBody Employee employee) {
-		return new ResponseEntity<>(this.employeeService.add(employee), HttpStatus.CREATED);
+		try {
+			return new ResponseEntity<>(this.employeeService.add(employee), HttpStatus.CREATED);
+
+		} catch (EmployeeAlreadyExist message) {
+			throw new RuntimeException(message);
+		}
 	}
 
 	@GetMapping("getall")
