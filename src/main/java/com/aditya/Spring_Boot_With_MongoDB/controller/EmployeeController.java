@@ -38,4 +38,9 @@ public class EmployeeController {
 		return new ResponseEntity<>(this.employeeService.getAll(), HttpStatus.OK);
 	}
 
+	@GetMapping("getbyname")
+	public ResponseEntity<?> getByName(String name) {
+		return new ResponseEntity<>(this.employeeService.getAllByName(name), HttpStatus.OK);
+	}
+
 }
