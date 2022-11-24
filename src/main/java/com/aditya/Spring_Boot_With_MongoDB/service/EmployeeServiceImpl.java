@@ -8,6 +8,7 @@
 package com.aditya.Spring_Boot_With_MongoDB.service;
 
 import com.aditya.Spring_Boot_With_MongoDB.domain.Employee;
+import com.aditya.Spring_Boot_With_MongoDB.exeption.EmployeeAlreadyExist;
 import com.aditya.Spring_Boot_With_MongoDB.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee add(Employee employee) {
+	public Employee add(Employee employee) throws EmployeeAlreadyExist {
+		if(employeeRepository.existsById(employee.getEmployeeCode())) {
+			throw new EmployeeAlreadyExist();
+		}
 		return this.employeeRepository.save(employee);
 	}
 
