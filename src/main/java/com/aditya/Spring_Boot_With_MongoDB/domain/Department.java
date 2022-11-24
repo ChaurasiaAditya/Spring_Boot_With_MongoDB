@@ -10,4 +10,7 @@ package com.aditya.Spring_Boot_With_MongoDB.domain;
 public class Department {
 	private int departmentCode;
 	private String departmentName;
+
+	public Department() {
+	}
 }
