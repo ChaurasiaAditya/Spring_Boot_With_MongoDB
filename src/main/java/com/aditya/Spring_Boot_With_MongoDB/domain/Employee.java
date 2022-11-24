@@ -26,4 +26,44 @@ public class Employee {
 		this.department = department;
 		this.projects = projects;
 	}
+
+	public int getEmployeeCode() {
+		return employeeCode;
+	}
+
+	public void setEmployeeCode(int employeeCode) {
+		this.employeeCode = employeeCode;
+	}
+
+	public String getEmployeeName() {
+		return employeeName;
+	}
+
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	public String getEmployeeEmail() {
+		return employeeEmail;
+	}
+
+	public void setEmployeeEmail(String employeeEmail) {
+		this.employeeEmail = employeeEmail;
+	}
+
+	public Department getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
+	}
 }
