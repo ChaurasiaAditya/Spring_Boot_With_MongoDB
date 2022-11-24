@@ -11,4 +11,7 @@ public class Project {
 	private  int projectCode;
 	private String projectName;
 	private int durationInMonth;
+
+	public Project() {
+	}
 }
