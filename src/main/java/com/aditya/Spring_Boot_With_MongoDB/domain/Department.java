@@ -18,4 +18,20 @@ public class Department {
 		this.departmentCode = departmentCode;
 		this.departmentName = departmentName;
 	}
+
+	public int getDepartmentCode() {
+		return departmentCode;
+	}
+
+	public void setDepartmentCode(int departmentCode) {
+		this.departmentCode = departmentCode;
+	}
+
+	public String getDepartmentName() {
+		return departmentName;
+	}
+
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
+	}
 }
