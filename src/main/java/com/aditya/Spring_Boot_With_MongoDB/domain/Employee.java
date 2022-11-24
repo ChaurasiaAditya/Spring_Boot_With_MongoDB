@@ -18,4 +18,12 @@ public class Employee {
 
 	public Employee() {
 	}
+
+	public Employee(int employeeCode, String employeeName, String employeeEmail, Department department, List<Project> projects) {
+		this.employeeCode = employeeCode;
+		this.employeeName = employeeName;
+		this.employeeEmail = employeeEmail;
+		this.department = department;
+		this.projects = projects;
+	}
 }
