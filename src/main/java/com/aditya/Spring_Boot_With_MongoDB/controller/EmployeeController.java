@@ -43,4 +43,14 @@ public class EmployeeController {
 		return new ResponseEntity<>(this.employeeService.getAllByName(name), HttpStatus.OK);
 	}
 
+	@GetMapping("getbyemail")
+	public ResponseEntity<?> getByEmail(String email) {
+		return new ResponseEntity<>(this.employeeService.getEmployeeByEmail(email), HttpStatus.OK);
+	}
+
+	@GetMapping("getbydepartment")
+	public ResponseEntity<?> getbydepartmentname(String department) {
+		return new ResponseEntity<>(this.employeeService.getEmployeeByDepartment(department), HttpStatus.OK);
+	}
+
 }
