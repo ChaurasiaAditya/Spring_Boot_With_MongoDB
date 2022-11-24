@@ -13,4 +13,9 @@ public class Department {
 
 	public Department() {
 	}
+
+	public Department(int departmentCode, String departmentName) {
+		this.departmentCode = departmentCode;
+		this.departmentName = departmentName;
+	}
 }
