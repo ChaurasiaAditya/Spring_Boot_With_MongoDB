@@ -12,10 +12,7 @@ import com.aditya.Spring_Boot_With_MongoDB.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1")
@@ -29,7 +26,7 @@ public class EmployeeController {
 	}
 
 	@PostMapping("add")
-	public ResponseEntity<?> addEmployee(Employee employee) {
+	public ResponseEntity<?> addEmployee(@RequestBody Employee employee) {
 		return new ResponseEntity<>(this.employeeService.add(employee), HttpStatus.CREATED);
 	}
 
@@ -38,18 +35,18 @@ public class EmployeeController {
 		return new ResponseEntity<>(this.employeeService.getAll(), HttpStatus.OK);
 	}
 
-	@GetMapping("getbyname")
-	public ResponseEntity<?> getByName(String name) {
+	@GetMapping("getbyname/{name}")
+	public ResponseEntity<?> getByName(@PathVariable String name) {
 		return new ResponseEntity<>(this.employeeService.getAllByName(name), HttpStatus.OK);
 	}
 
-	@GetMapping("getbyemail")
-	public ResponseEntity<?> getByEmail(String email) {
+	@GetMapping("getbyemail/{email}")
+	public ResponseEntity<?> getByEmail(@PathVariable String email) {
 		return new ResponseEntity<>(this.employeeService.getEmployeeByEmail(email), HttpStatus.OK);
 	}
 
-	@GetMapping("getbydepartment")
-	public ResponseEntity<?> getbydepartmentname(String department) {
+	@GetMapping("getbydepartment/{department}")
+	public ResponseEntity<?> getbydepartmentname(@PathVariable String department) {
 		return new ResponseEntity<>(this.employeeService.getEmployeeByDepartment(department), HttpStatus.OK);
 	}
 

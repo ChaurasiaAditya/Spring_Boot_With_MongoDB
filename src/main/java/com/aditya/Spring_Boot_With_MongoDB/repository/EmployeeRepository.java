@@ -9,17 +9,19 @@ package com.aditya.Spring_Boot_With_MongoDB.repository;
 
 import com.aditya.Spring_Boot_With_MongoDB.domain.Employee;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface EmployeeRepository extends MongoRepository<Employee,Integer> {
+public interface EmployeeRepository extends MongoRepository<Employee, Integer> {
+
 	List<Employee> findByEmployeeName(String name);
+
 	Employee findByEmployeeEmail(String email);
 
-	@Query("{'department.departmentName': {$in: [?0]}}")
-	List<Employee> findAllByDepartment_DepartmentCode(String departmentName);
+	//	@Query("{'department.departmentName': {$in: [?0]}}")
+	List<Employee> findEmployeeByDepartment_DepartmentName(String departmentName);
 
 }
+
