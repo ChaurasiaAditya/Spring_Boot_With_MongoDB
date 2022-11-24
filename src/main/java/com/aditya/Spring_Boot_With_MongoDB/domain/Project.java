@@ -14,4 +14,43 @@ public class Project {
 
 	public Project() {
 	}
+
+	public Project(int projectCode, String projectName, int durationInMonth) {
+		this.projectCode = projectCode;
+		this.projectName = projectName;
+		this.durationInMonth = durationInMonth;
+	}
+
+	public int getProjectCode() {
+		return projectCode;
+	}
+
+	public void setProjectCode(int projectCode) {
+		this.projectCode = projectCode;
+	}
+
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+
+	public int getDurationInMonth() {
+		return durationInMonth;
+	}
+
+	public void setDurationInMonth(int durationInMonth) {
+		this.durationInMonth = durationInMonth;
+	}
+
+	@Override
+	public String toString() {
+		return "Project{" +
+			"projectCode=" + projectCode +
+			", projectName='" + projectName + '\'' +
+			", durationInMonth=" + durationInMonth +
+			'}';
+	}
 }
