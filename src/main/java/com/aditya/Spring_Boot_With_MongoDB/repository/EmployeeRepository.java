@@ -7,5 +7,10 @@
  */
 package com.aditya.Spring_Boot_With_MongoDB.repository;
 
-public interface EmployeeRepository {
+import com.aditya.Spring_Boot_With_MongoDB.domain.Employee;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EmployeeRepository extends MongoRepository<Employee,Integer> {
 }
