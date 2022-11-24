@@ -8,5 +8,5 @@
 package com.aditya.Spring_Boot_With_MongoDB.domain;
 
 public class Employee {
-
+	private int code;
 }
