@@ -7,6 +7,7 @@
  */
 package com.aditya.Spring_Boot_With_MongoDB.domain;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
@@ -15,6 +16,7 @@ import java.util.List;
 @Document
 public class Employee {
 
+	@MongoId
 	private int employeeCode;
 	private String employeeName;
 	private String employeeEmail;
