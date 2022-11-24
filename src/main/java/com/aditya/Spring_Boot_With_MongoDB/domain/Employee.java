@@ -16,4 +16,6 @@ public class Employee {
 	private Department department;
 	private List<Project> projects;
 
+	public Employee() {
+	}
 }
