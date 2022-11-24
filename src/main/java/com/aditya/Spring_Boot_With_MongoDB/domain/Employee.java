@@ -7,6 +7,13 @@
  */
 package com.aditya.Spring_Boot_With_MongoDB.domain;
 
+import java.util.List;
+
 public class Employee {
-	private int code;
+	private int employeeCode;
+	private String employeeName;
+	private String employeeEmail;
+	private Department department;
+	private List<Project> projects;
+
 }
