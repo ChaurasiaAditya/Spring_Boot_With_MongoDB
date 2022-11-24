@@ -8,5 +8,7 @@
 package com.aditya.Spring_Boot_With_MongoDB.domain;
 
 public class Project {
-
+	private  int projectCode;
+	private String projectName;
+	private int durationInMonth;
 }
