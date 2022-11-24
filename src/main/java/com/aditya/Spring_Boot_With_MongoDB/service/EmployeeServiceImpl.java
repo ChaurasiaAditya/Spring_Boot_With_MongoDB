@@ -15,9 +15,9 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService {
 
-	private EmployeeRepository employeeRepository;
+	private final EmployeeRepository employeeRepository;
 
 	@Autowired
 	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
@@ -26,26 +26,26 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	@Override
 	public Employee add(Employee employee) {
-		return null;
+		return this.employeeRepository.save(employee);
 	}
 
 	@Override
 	public List<Employee> getAll() {
-		return null;
+		return this.employeeRepository.findAll();
 	}
 
 	@Override
 	public List<Employee> getAllByName(String name) {
-		return null;
+		return this.employeeRepository.findByEmployeeName(name);
 	}
 
 	@Override
 	public Employee getEmployeeByEmail(String email) {
-		return null;
+		return this.employeeRepository.findByEmployeeEmail(email);
 	}
 
 	@Override
 	public List<Employee> getEmployeeByDepartment(String departmentName) {
-		return null;
+		return this.employeeRepository.findAllByDepartment_DepartmentCode(departmentName);
 	}
 }
