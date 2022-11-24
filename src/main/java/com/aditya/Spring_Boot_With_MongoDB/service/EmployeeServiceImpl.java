@@ -8,10 +8,22 @@
 package com.aditya.Spring_Boot_With_MongoDB.service;
 
 import com.aditya.Spring_Boot_With_MongoDB.domain.Employee;
+import com.aditya.Spring_Boot_With_MongoDB.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EmployeeServiceImpl implements EmployeeService{
+
+	private EmployeeRepository employeeRepository;
+
+	@Autowired
+	public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+		this.employeeRepository = employeeRepository;
+	}
+
 	@Override
 	public Employee add(Employee employee) {
 		return null;
